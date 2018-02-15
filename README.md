@@ -8,5 +8,5 @@ sudo docker build -t simpleioc
 
 To run:
 ```
-sudo docker run --net=host -i simplehost
+sudo docker run --net=host -i simpleioc
 ```
