@@ -20,6 +20,7 @@ RUN cd /opt/epics/base && make
 RUN wget --quiet https://sourceforge.net/projects/epics-pvdata/files/4.6.0/EPICS-CPP-4.6.0.tar.gz
 RUN tar xvzf EPICS-CPP-4.6.0.tar.gz
 RUN mv EPICS-CPP-4.6.0 /opt/epics/V4
+# Skip building the examples
 RUN cd /opt/epics/V4 && sed -i 's/MODULES += exampleCPP/# MODULES += exampleCPP/g' Makefile
 RUN cd /opt/epics/V4 && make EPICS_BASE=/opt/epics/base
 
