@@ -27,7 +27,7 @@ RUN apt-get update \
   && cd /opt/epics/iocs/SimpleIoc && make
 
 # Expose the standard EPICS and V4 ports
-EXPOSE 5064 5065 5064/udp 5075 5076 5075/udp
+EXPOSE 5064 5065 5064/udp 5075 5076 5075/tcp 5076/udp
 
 # Start the IOC
 CMD cd /opt/epics/iocs/SimpleIoc/iocBoot/iocSimpleIoc/ && ../../bin/linux-x86_64/SimpleIoc st.cmd
