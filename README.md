@@ -1,5 +1,5 @@
 # SimpleIocDocker
-Docker file for creating the [SimpleIoc](https://github.com/mattclarke/SimpleIoc)
+Docker file for creating the [SimpleIoc](https://github.com/mattclarke/SimpleIoc) as a Docker image.
 
 To build the image:
 ```
