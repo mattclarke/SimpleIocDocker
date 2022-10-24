@@ -9,18 +9,11 @@ RUN apt-get update \
   && apt-get install -yq wget \
   && apt-get install -yq git \
   # Download and build EPICS base
-  && wget --quiet https://epics.anl.gov/download/base/base-3.15.5.tar.gz \
-  && tar xvzf base-3.15.5.tar.gz \
+  && wget --quiet https://epics.anl.gov/download/base/base-7.0.7.tar.gz \
+  && tar xvzf base-7.0.7.tar.gz \
   && mkdir /opt/epics \
-  && mv base-3.15.5 /opt/epics/base \
+  && mv base-7.0.7 /opt/epics/base \
   && cd /opt/epics/base && make \
-  # Download and build EPICS V4
-  && wget --quiet https://sourceforge.net/projects/epics-pvdata/files/4.6.0/EPICS-CPP-4.6.0.tar.gz \
-  && tar xvzf EPICS-CPP-4.6.0.tar.gz \
-  && mv EPICS-CPP-4.6.0 /opt/epics/V4 \
-  # Skip building the examples \
-  && cd /opt/epics/V4 && sed -i 's/MODULES += exampleCPP/# MODULES += exampleCPP/g' Makefile \
-  && cd /opt/epics/V4 && make EPICS_BASE=/opt/epics/base \
   # Download SimpleIoc from git and build it
   && mkdir /opt/epics/iocs \
   && git clone https://github.com/mattclarke/SimpleIoc.git /opt/epics/iocs/SimpleIoc \
